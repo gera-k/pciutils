@@ -301,6 +301,54 @@ cap_pri(struct device *d, int where)
 }
 
 static void
+cap_rebar(struct device *d, int where)
+{
+  u16 w, i, n, cnt, s;
+  u32 l;
+
+  printf("Resizable BAR\n");
+  if (verbose < 2)
+    return;
+
+  if (!config_fetch(d, where + 0x4, 8))
+    return;
+
+  w = get_conf_word(d, where + 0x8);
+  cnt = (w >> 5) & 7;
+  printf("\t\t Num: %d\n", cnt);
+
+  if (!config_fetch(d, where + 0x4, 8 * cnt))
+    return;
+
+  for (n = 0; n < cnt; n++)
+  {
+    char u = 'M';
+
+    l = get_conf_long(d, where + 0x4 + n * 8);
+    w = get_conf_word(d, where + 0x8 + n * 8);
+    s = (1 << ((w >> 8) & 0x1F));
+    if (s > 512)
+    {
+      s /= 1024;
+      u = 'G';
+    }
+    printf("\t\tRegion %d size: %3u%c, Supports: ", w & 7, s, u);
+    for(i = 4; i < 24; i++)
+    {
+      if (!(l & (1 << i)))
+        continue;
+
+      if (i < 14)
+        printf("%dM ", 1 << (i - 4));
+      else
+        printf("%dG ", 1 << (i - 14));
+    }
+    printf("\n");
+  }
+
+}
+
+static void
 cap_pasid(struct device *d, int where)
 {
   u16 w;
@@ -852,7 +900,7 @@ show_ext_caps(struct device *d, int type)
 	    cap_pri(d, where);
 	    break;
 	  case PCI_EXT_CAP_ID_REBAR:
-	    printf("Resizable BAR <?>\n");
+	    cap_rebar(d, where);
 	    break;
 	  case PCI_EXT_CAP_ID_DPA:
 	    printf("Dynamic Power Allocation <?>\n");
