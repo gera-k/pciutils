@@ -315,7 +315,6 @@ cap_rebar(struct device *d, int where)
 
   w = get_conf_word(d, where + 0x8);
   cnt = (w >> 5) & 7;
-  printf("\t\t Num: %d\n", cnt);
 
   if (!config_fetch(d, where + 0x4, 8 * cnt))
     return;
