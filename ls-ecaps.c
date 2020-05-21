@@ -370,12 +370,35 @@ cap_pasid(struct device *d, int where)
 }
 
 static void
+show_size(u64 x, int t)
+{
+  static const char suffix[][2] = { "", "K", "M", "G", "T" };
+  unsigned i;
+  u64 xx = x / t;
+  unsigned ii;
+  if (!x)
+    return;
+  for (i = 0; i < (sizeof(suffix) / sizeof(*suffix) - 1); i++) {
+    if (x % 1024)
+      break;
+    x /= 1024;
+  }
+  for (ii = 0; ii < (sizeof(suffix) / sizeof(*suffix) - 1); ii++) {
+    if (xx % 1024)
+      break;
+    xx /= 1024;
+  }
+  printf(" [size=%u%s (%d VF x %u%s)]", (unsigned)x, suffix[i], t, (unsigned)xx, suffix[ii]);
+}
+
+static void
 cap_sriov(struct device *d, int where)
 {
   u16 b;
   u16 w;
   u32 l;
   int i;
+  int totalVFs;
 
   printf("Single Root I/O Virtualization (SR-IOV)\n");
   if (verbose < 2)
@@ -397,6 +420,7 @@ cap_sriov(struct device *d, int where)
   w = get_conf_word(d, where + PCI_IOV_INITIALVF);
   printf("\t\tInitial VFs: %d, ", w);
   w = get_conf_word(d, where + PCI_IOV_TOTALVF);
+  totalVFs = w;
   printf("Total VFs: %d, ", w);
   w = get_conf_word(d, where + PCI_IOV_NUMVF);
   printf("Number of VFs: %d, ", w);
@@ -416,6 +440,7 @@ cap_sriov(struct device *d, int where)
   for (i=0; i < PCI_IOV_NUM_BAR; i++)
     {
       u32 addr;
+      u64 size;
       int type;
       u32 h;
       l = get_conf_long(d, where + PCI_IOV_BAR_BASE + 4*i);
@@ -426,16 +451,20 @@ cap_sriov(struct device *d, int where)
       printf("\t\tRegion %d: Memory at ", i);
       addr = l & PCI_ADDR_MEM_MASK;
       type = l & PCI_BASE_ADDRESS_MEM_TYPE_MASK;
+      size = d->dev->vf_size[i];
       if (type == PCI_BASE_ADDRESS_MEM_TYPE_64)
 	{
 	  i++;
 	  h = get_conf_long(d, where + PCI_IOV_BAR_BASE + (i*4));
 	  printf("%08x", h);
 	}
-      printf("%08x (%s-bit, %sprefetchable)\n",
+      printf("%08x (%s-bit, %sprefetchable)",
 	addr,
 	(type == PCI_BASE_ADDRESS_MEM_TYPE_32) ? "32" : "64",
 	(l & PCI_BASE_ADDRESS_MEM_PREFETCH) ? "" : "non-");
+
+      show_size(size, totalVFs);
+      printf("\n");
     }
 
   l = get_conf_long(d, where + PCI_IOV_MSAO);

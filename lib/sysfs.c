@@ -160,7 +160,7 @@ sysfs_get_resources(struct pci_dev *d)
   file = fopen(namebuf, "r");
   if (!file)
     a->error("Cannot open %s: %s", namebuf, strerror(errno));
-  for (i = 0; i < 7; i++)
+  for (i = 0; i < 13; i++)
     {
       unsigned long long start, end, size, flags;
       if (!fgets(buf, sizeof(buf), file))
@@ -178,13 +178,18 @@ sysfs_get_resources(struct pci_dev *d)
 	  d->base_addr[i] = start | flags;
 	  d->size[i] = size;
 	}
-      else
+      else if (i < 7)
 	{
 	  d->rom_flags = flags;
 	  flags &= PCI_ADDR_FLAG_MASK;
 	  d->rom_base_addr = start | flags;
 	  d->rom_size = size;
 	}
+      else
+        {
+	  d->vf_base_addr[i - 7] = start;
+	  d->vf_size[i - 7] = size;
+        }
     }
   fclose(file);
 }

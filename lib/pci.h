@@ -133,6 +133,8 @@ struct pci_dev {
   pciaddr_t size[6];			/* Region sizes */
   pciaddr_t rom_base_addr;		/* Expansion ROM base address */
   pciaddr_t rom_size;			/* Expansion ROM size */
+  pciaddr_t vf_base_addr[6];		/* VF Base addresses */
+  pciaddr_t vf_size[6];			/* VF Region sizes */
   struct pci_cap *first_cap;		/* List of capabilities */
   char *phy_slot;			/* Physical slot */
   char *module_alias;			/* Linux kernel module alias */
