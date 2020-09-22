@@ -1,101 +1,121 @@
-00:1c.0 Class 0604: Device 8086:9d10 (rev f1)
-	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx-
-	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
-	Latency: 0
-	Interrupt: pin A routed to IRQ 255
-	Bus: primary=00, secondary=02, subordinate=02, sec-latency=0
-	I/O behind bridge: None
-	Memory behind bridge: f1100000-f11fffff [size=1M]
-	Prefetchable memory behind bridge: None
-	Secondary status: 66MHz- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort+ <SERR- <PERR-
-	BridgeCtl: Parity- SERR- NoISA- VGA- VGA16- MAbort- >Reset- FastB2B-
-		PriDiscTmr- SecDiscTmr- DiscTmrStat- DiscTmrSERREn-
-	Capabilities: [40] Express (v2) Root Port (Slot+), MSI 00
-		DevCap:	MaxPayload 256 bytes, PhantFunc 0
-			ExtTag- RBE+
-		DevCtl:	CorrErr- NonFatalErr- FatalErr- UnsupReq-
-			RlxdOrd- ExtTag- PhantFunc- AuxPwr- NoSnoop-
-			MaxPayload 256 bytes, MaxReadReq 128 bytes
-		DevSta:	CorrErr- NonFatalErr- FatalErr- UnsupReq- AuxPwr+ TransPend-
-		LnkCap:	Port #1, Speed 8GT/s, Width x1, ASPM L1, Exit Latency L1 <16us
-			ClockPM- Surprise- LLActRep+ BwNot+ ASPMOptComp+
-		LnkCtl:	ASPM L1 Enabled; RCB 64 bytes Disabled- CommClk+
-			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
-		LnkSta:	Speed 5GT/s (downgraded), Width x1 (ok)
-			TrErr- Train- SlotClk+ DLActive+ BWMgmt+ ABWMgmt-
-		SltCap:	AttnBtn- PwrCtrl- MRL- AttnInd- PwrInd- HotPlug- Surprise-
-			Slot #0, PowerLimit 10.000W; Interlock- NoCompl+
-		SltCtl:	Enable: AttnBtn- PwrFlt- MRL- PresDet- CmdCplt- HPIrq- LinkChg-
-			Control: AttnInd Unknown, PwrInd Unknown, Power- Interlock-
-		SltSta:	Status: AttnBtn- PowerFlt- MRL- CmdCplt- PresDet+ Interlock-
-			Changed: MRL- PresDet- LinkState+
-		RootCtl: ErrCorrectable- ErrNon-Fatal- ErrFatal- PMEIntEna- CRSVisible-
-		RootCap: CRSVisible-
-		RootSta: PME ReqID 0000, PMEStatus- PMEPending-
-		DevCap2: Completion Timeout: Range ABC, TimeoutDis+, NROPrPrP-, LTR+
-			 10BitTagComp-, 10BitTagReq-, OBFF Not Supported, ExtFmt-, EETLPPrefix-
-			 EmergencyPowerReduction Not Supported, EmergencyPowerReductionInit-
-			 FRS-, LN System CLS Not Supported, TPHComp-, ExtTPHComp-, ARIFwd+
-			 AtomicOpsCap: Routing- 32bit- 64bit- 128bitCAS-
-		DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis-, LTR+, OBFF Disabled ARIFwd-
-			 AtomicOpsCtl: ReqEn- EgressBlck-
-		LnkCtl2: Target Link Speed: 8GT/s, EnterCompliance- SpeedDis-
-			 Transmit Margin: Normal Operating Range, EnterModifiedCompliance- ComplianceSOS-
-			 Compliance De-emphasis: -6dB
-		LnkSta2: Current De-emphasis Level: -6dB, EqualizationComplete-, EqualizationPhase1-
-			 EqualizationPhase2-, EqualizationPhase3-, LinkEqualizationRequest-
-	Capabilities: [80] MSI: Enable- Count=1/1 Maskable- 64bit-
-		Address: 00000000  Data: 0000
-	Capabilities: [90] Subsystem: Device 17aa:2238
-	Capabilities: [a0] Power Management version 3
-		Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0+,D1-,D2-,D3hot+,D3cold+)
-		Status: D0 NoSoftRst- PME-Enable- DSel=0 DScale=0 PME-
-	Capabilities: [100 v1] Advanced Error Reporting
-		UESta:	DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- UnxCmplt- RxOF- MalfTLP- ECRC- UnsupReq- ACSViol-
-		UEMsk:	DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- UnxCmplt+ RxOF- MalfTLP- ECRC- UnsupReq- ACSViol-
-		UESvrt:	DLP+ SDES- TLP- FCP- CmpltTO- CmpltAbrt- UnxCmplt- RxOF+ MalfTLP+ ECRC- UnsupReq- ACSViol-
-		CESta:	RxErr- BadTLP- BadDLLP- Rollover- Timeout- AdvNonFatalErr-
-		CEMsk:	RxErr- BadTLP- BadDLLP- Rollover- Timeout- AdvNonFatalErr+
-		AERCap:	First Error Pointer: 00, ECRCGenCap- ECRCGenEn- ECRCChkCap- ECRCChkEn-
-			MultHdrRecCap- MultHdrRecEn- TLPPfxPres- HdrLogCap-
-		HeaderLog: 00000000 00000000 00000000 00000000
-		RootCmd: CERptEn- NFERptEn- FERptEn-
-		RootSta: CERcvd- MultCERcvd- UERcvd- MultUERcvd-
-			 FirstFatal- NonFatalMsg- FatalMsg- IntMsg 0
-		ErrorSrc: ERR_COR: 0000 ERR_FATAL/NONFATAL: 0000
-	Capabilities: [140 v1] Access Control Services
-		ACSCap:	SrcValid+ TransBlk+ ReqRedir+ CmpltRedir+ UpstreamFwd- EgressCtrl- DirectTrans-
-		ACSCtl:	SrcValid- TransBlk- ReqRedir- CmpltRedir- UpstreamFwd- EgressCtrl- DirectTrans-
-	Capabilities: [200 v1] L1 PM Substates
-		L1SubCap: PCI-PM_L1.2+ PCI-PM_L1.1+ ASPM_L1.2+ ASPM_L1.1+ L1_PM_Substates+
-			  PortCommonModeRestoreTime=40us PortTPowerOnTime=10us
-		L1SubCtl1: PCI-PM_L1.2+ PCI-PM_L1.1+ ASPM_L1.2+ ASPM_L1.1+
-			   T_CommonMode=60us LTR1.2_Threshold=163840ns
-		L1SubCtl2: T_PwrOn=60us
-	Capabilities: [220 v1] Secondary PCI Express
-		LnkCtl3: LnkEquIntrruptEn-, PerformEqu-
-		LaneErrStat: 0
-00: 86 80 10 9d 07 00 10 00 f1 00 04 06 00 00 81 00
-10: 00 00 00 00 00 00 00 00 00 02 02 00 f0 00 00 20
-20: 10 f1 10 f1 f1 ff 01 00 00 00 00 00 00 00 00 00
+6b:00.0 Unassigned class [ff00]: Intel Corporation Device 0d93
+        Physical Slot: 3
+        Control: I/O- Mem- BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr+ Stepping- SERR+ FastB2B- DisINTx-
+        Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+        Interrupt: pin A routed to IRQ 255
+        NUMA node: 0
+        Region 0: Memory at a6f00000 (32-bit, non-prefetchable) [disabled] [size=1M]
+        Region 2: I/O ports at a400 [disabled] [size=1K]
+        Region 4: Memory at a0000000 (32-bit, prefetchable) [disabled] [size=16M]
+        Capabilities: [40] Express (v2) Root Complex Integrated Endpoint, MSI 00
+                DevCap: MaxPayload 256 bytes, PhantFunc 0
+                        ExtTag+ RBE+ FLReset+
+                DevCtl: CorrErr+ NonFatalErr+ FatalErr+ UnsupReq+
+                        RlxdOrd+ ExtTag+ PhantFunc- AuxPwr- NoSnoop- FLReset-
+                        MaxPayload 128 bytes, MaxReadReq 512 bytes
+                DevSta: CorrErr- NonFatalErr- FatalErr- UnsupReq- AuxPwr- TransPend-
+                DevCap2: Completion Timeout: Range ABCD, TimeoutDis+ NROPrPrP- LTR+
+                         10BitTagComp- 10BitTagReq- OBFF Via WAKE#, ExtFmt+ EETLPPrefix+, MaxEETLPPrefixes 1
+                         EmergencyPowerReduction Not Supported, EmergencyPowerReductionInit-
+                         FRS-
+                         AtomicOpsCap: 32bit+ 64bit+ 128bitCAS+
+                DevCtl2: Completion Timeout: 50us to 50ms, TimeoutDis- LTR- OBFF Disabled,
+                         AtomicOpsCtl: ReqEn-
+        Capabilities: [80] MSI: Enable- Count=1/4 Maskable+ 64bit+
+                Address: 0000000000000000  Data: 0000
+                Masking: 00000000  Pending: 00000000
+        Capabilities: [a0] Power Management version 3
+                Flags: PMEClk- DSI- D1- D2- AuxCurrent=0mA PME(D0+,D1+,D2+,D3hot+,D3cold+)
+                Status: D0 NoSoftRst+ PME-Enable- DSel=0 DScale=0 PME-
+        Capabilities: [100 v1] Advanced Error Reporting
+                UESta:  DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- UnxCmplt- RxOF- MalfTLP- ECRC- UnsupReq- ACSViol-
+                UEMsk:  DLP- SDES- TLP- FCP- CmpltTO- CmpltAbrt- UnxCmplt- RxOF- MalfTLP- ECRC- UnsupReq+ ACSViol-
+                UESvrt: DLP+ SDES- TLP+ FCP+ CmpltTO- CmpltAbrt- UnxCmplt- RxOF+ MalfTLP+ ECRC- UnsupReq- ACSViol-
+                CESta:  RxErr- BadTLP- BadDLLP- Rollover- Timeout- AdvNonFatalErr-
+                CEMsk:  RxErr- BadTLP- BadDLLP- Rollover- Timeout- AdvNonFatalErr+
+                AERCap: First Error Pointer: 00, ECRCGenCap+ ECRCGenEn+ ECRCChkCap+ ECRCChkEn+
+                        MultHdrRecCap+ MultHdrRecEn- TLPPfxPres- HdrLogCap-
+                HeaderLog: 00000000 00000000 00000000 00000000
+        Capabilities: [200 v1] Multi-Function Virtual Channel <?>
+        Capabilities: [300 v1] Virtual Channel
+                Caps:   LPEVC=0 RefClk=100ns PATEntryBits=1
+                Arb:    Fixed- WRR32- WRR64- WRR128-
+                Ctrl:   ArbSelect=Fixed
+                Status: InProgress-
+                VC0:    Caps:   PATOffset=00 MaxTimeSlots=1 RejSnoopTrans-
+                        Arb:    Fixed- WRR32- WRR64- WRR128- TWRR128- WRR256-
+                        Ctrl:   Enable+ ID=0 ArbSelect=Fixed TC/VC=ff
+                        Status: NegoPending- InProgress-
+        Capabilities: [550 v1] Multicast
+                McastCap: MaxGroups 64, WindowSz 1 (2 bytes)            McastCtl: NumGroups 1, Enable-
+                McastBAR: IndexPos 0, BaseAddr 0000000000000000
+                McastReceiveVec:      0000000000000000
+                McastBlockAllVec:     0000000000000000
+                McastBlockUntransVec: 0000000000000000
+        Capabilities: [588 v1] Latency Tolerance Reporting
+                Max snoop latency: 0ns
+                Max no snoop latency: 0ns
+        Capabilities: [5b0 v1] Transaction Processing Hints
+                Extended requester support
+                Steering table in TPH capability structure
+        Capabilities: [6e0 v1] Address Translation Service (ATS)
+                ATSCap: Invalidate Queue Depth: 00
+                ATSCtl: Enable-, Smallest Translation Unit: 00
+        Capabilities: [700 v1] Physical Resizable BAR
+                BAR 4: current size: 16MB, supported: 16MB 32MB
+        Capabilities: [714 v1] Secondary PCI Express
+                LnkCtl3: LnkEquIntrruptEn- PerformEqu-
+                LaneErrStat: 0
+        Capabilities: [b20 v1] Page Request Interface (PRI)
+                PRICtl: Enable- Reset-
+                PRISta: RF- UPRGI- Stopped+
+                Page Request Capacity: 00000000, Page Request Allocation: 00000000
+        Capabilities: [b40 v1] Process Address Space ID (PASID)
+                PASIDCap: Exec+ Priv+, Max PASID Width: 14
+                PASIDCtl: Enable- Exec- Priv-
+        Capabilities: [b50 v1] Precision Time Measurement
+                PTMCap: Requester:- Responder:- Root:-
+                PTMClockGranularity: Unimplemented
+                PTMControl: Enabled:- RootSelected:-
+                PTMEffectiveGranularity: Unknown
+        Capabilities: [b80 v1] Single Root I/O Virtualization (SR-IOV)
+                IOVCap: Migration-, Interrupt Message Number: 000
+                IOVCtl: Enable- Migration- Interrupt- MSE- ARIHierarchy-
+                IOVSta: Migration-
+                Initial VFs: 6, Total VFs: 6, Number of VFs: 0, Function Dependency Link: 00
+                VF offset: 16, stride: 2, Device ID: 0d52
+                Supported Page Size: 0000003f, System Page Size: 00000001
+                Region 0: Memory at a6900000 (32-bit, non-prefetchable)
+                Region 2: Memory at a7028000 (32-bit, non-prefetchable)
+                Region 4: Memory at 94000000 (32-bit, non-prefetchable)
+                VF Migration: offset: 00000000, BIR: 0
+        Capabilities: [d00 v1] Vendor Specific Information: ID=0040 Rev=1 Len=04c <?>
+        Capabilities: [e00 v1] Designated Vendor-Specific: Vendor=1e98 ID=0000 Rev=0 Len=56: CXL
+                CXLCap: Cache- IO+ Mem+ Mem HW Init+ HDMCount 1 Viral-
+                CXLCtl: Cache- IO+ Mem- Cache SF Cov 0 Cache SF Gran 0 Cache Clean- Viral-
+                CXLSta: Viral-
+        Capabilities: [e38 v1] Device Serial Number 30-91-11-78-10-00-00-00
+00: 86 80 93 0d 40 01 10 00 00 00 00 ff 08 40 80 00
+10: 00 00 f0 a6 00 00 00 00 01 a4 00 00 00 00 00 00
+20: 08 00 00 a0 00 00 00 00 00 00 00 00 00 00 00 00
 30: 00 00 00 00 40 00 00 00 00 00 00 00 ff 01 00 00
-40: 10 80 42 01 01 80 00 00 20 00 10 00 13 48 72 01
-50: 42 00 12 70 00 b2 04 00 00 00 40 01 00 00 00 00
-60: 00 00 00 00 37 08 00 00 00 04 00 00 0e 00 00 00
-70: 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-80: 05 90 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-90: 0d a0 00 00 aa 17 38 22 00 00 00 00 00 00 00 00
-a0: 01 00 03 c8 00 00 00 00 00 00 00 00 00 00 00 00
+40: 10 80 92 00 e1 8f 00 10 1f 21 00 00 00 00 00 00
+50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+60: 00 00 00 00 9f 0b 78 00 00 00 00 00 00 00 00 00
+70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+80: 05 a0 84 03 00 00 00 00 00 00 00 00 00 00 00 00
+90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+a0: 01 00 13 f8 08 00 00 00 00 00 00 00 00 00 00 00
 b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-d0: 11 10 00 07 42 18 00 00 08 00 9e 8b 00 00 00 00
-e0: 00 f7 f3 00 00 00 00 00 06 80 12 00 00 00 00 00
-f0: 50 01 00 00 00 03 00 40 b3 0f 30 08 04 00 00 01
-100: 01 00 01 14 00 00 00 00 00 00 01 00 11 00 06 00
-110: 00 00 00 00 00 20 00 00 00 00 00 00 00 00 00 00
+d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+100: 01 00 01 20 00 00 00 00 00 00 10 00 10 30 46 00
+110: 00 00 00 00 00 20 00 00 e0 03 00 00 00 00 00 00
 120: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 130: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-140: 0d 00 01 20 0f 00 00 00 00 00 00 00 00 00 00 00
+140: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 150: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 160: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 170: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -107,10 +127,10 @@ f0: 50 01 00 00 00 03 00 40 b3 0f 30 08 04 00 00 01
 1d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 1e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 1f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-200: 1e 00 01 22 1f 28 28 00 0f 3c a0 40 31 00 00 00
-210: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-220: 19 00 01 00 00 00 00 00 00 00 00 00 77 75 77 75
-230: 77 75 77 75 00 00 00 00 00 00 00 00 00 00 00 00
+200: 08 00 01 30 00 00 00 00 01 00 00 00 00 00 00 00
+210: 01 00 00 00 ff 00 00 80 00 00 00 00 00 00 00 00
+220: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+230: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 240: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 250: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 260: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -123,12 +143,12 @@ f0: 50 01 00 00 00 03 00 40 b3 0f 30 08 04 00 00 01
 2d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 2e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 2f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-300: a7 5f b7 00 97 0c c0 1b 00 00 00 00 00 00 00 00
-310: 00 00 00 00 38 3f 70 7e 00 00 14 14 d9 23 6a 05
-320: db 60 d9 69 20 60 00 08 4f 19 18 3c 4e 99 85 08
-330: 16 00 00 2a bc b5 bc 4a 72 01 00 30 00 00 00 00
-340: d8 00 d8 00 f8 00 dc 00 5e 00 1a 00 4e 00 69 00
-350: 52 00 6d 00 01 00 1a 00 18 00 0e 00 00 00 00 00
+300: 09 00 01 55 00 00 00 00 00 00 00 00 00 00 00 00
+310: 00 00 00 00 ff 00 00 80 00 00 00 00 00 00 00 00
+320: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+330: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+340: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+350: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 360: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 370: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 380: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -140,13 +160,13 @@ f0: 50 01 00 00 00 03 00 40 b3 0f 30 08 04 00 00 01
 3e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 3f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 400: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-410: 00 00 00 00 00 00 00 00 30 09 00 00 00 00 00 00
-420: 47 81 ac e2 f0 59 00 00 28 00 00 00 55 55 15 14
-430: 54 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+410: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+420: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+430: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 440: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-450: 82 11 80 6f 00 00 00 00 00 00 00 00 00 00 00 00
-460: 00 00 00 00 00 00 00 00 00 0e 08 a0 00 00 00 00
-470: 00 00 00 00 00 00 00 00 2c 3d 00 28 01 a0 00 00
+450: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+460: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+470: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 480: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 490: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 4a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -155,18 +175,18 @@ f0: 50 01 00 00 00 03 00 40 b3 0f 30 08 04 00 00 01
 4d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 4e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 4f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-500: 18 80 6c 00 85 06 18 1c 00 01 02 00 dd 00 70 04
-510: c0 35 18 18 04 b1 15 00 16 a0 00 00 0a 20 00 00
+500: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+510: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 520: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 530: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 540: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-550: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+550: 12 00 81 58 3f 01 00 00 00 00 00 00 00 00 00 00
 560: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 570: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-580: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+580: 00 00 00 00 00 00 00 00 18 00 01 5b 00 00 00 00
 590: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 5a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-5b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+5b0: 17 00 01 6e 00 03 0f 00 00 00 00 00 00 00 00 00
 5c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 5d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 5e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -185,12 +205,12 @@ f0: 50 01 00 00 00 03 00 40 b3 0f 30 08 04 00 00 01
 6b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 6c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 6d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-6e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+6e0: 0f 00 01 70 80 00 00 00 00 00 00 00 00 00 00 00
 6f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-700: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-710: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-720: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-730: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+700: 15 00 41 71 00 03 00 00 24 04 00 00 00 00 00 00
+710: 00 00 00 00 19 00 01 b2 00 00 00 00 00 00 00 00
+720: 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f
+730: 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f 7f
 740: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 750: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 760: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -203,7 +223,7 @@ f0: 50 01 00 00 00 03 00 40 b3 0f 30 08 04 00 00 01
 7d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 7e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 7f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-800: 00 00 00 00 03 00 00 00 01 00 00 00 00 00 00 00
+800: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 810: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 820: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 830: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -219,8 +239,8 @@ f0: 50 01 00 00 00 03 00 40 b3 0f 30 08 04 00 00 01
 8d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 8e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 8f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-900: 06 b0 c4 0c 96 0f 64 07 00 00 00 00 00 00 00 00
-910: 00 00 00 00 00 00 00 00 00 00 06 40 00 00 00 00
+900: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+910: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 920: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 930: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 940: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -253,16 +273,16 @@ ae0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 af0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 b00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 b10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-b20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b20: 13 00 01 b4 00 00 00 01 00 00 00 00 00 00 00 00
 b30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-b40: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-b50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b40: 1b 00 01 b5 06 14 00 00 00 00 00 00 00 00 00 00
+b50: 1f 00 01 b8 00 00 00 00 00 00 00 00 00 00 00 00
 b60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 b70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-b80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-b90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-ba0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-bb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+b80: 10 00 01 d0 02 00 00 00 00 00 00 00 06 00 06 00
+b90: 00 00 00 00 10 00 02 00 00 00 52 0d 3f 00 00 00
+ba0: 01 00 00 00 00 00 90 a6 00 00 00 00 00 80 02 a7
+bb0: 00 00 00 00 00 00 00 94 00 00 00 00 00 00 00 00
 bc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 bd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 be0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -283,7 +303,7 @@ cc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 cd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 ce0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 cf0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-d00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+d00: 0b 00 01 e0 40 00 c1 04 00 00 80 01 00 00 00 00
 d10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 d20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 d30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -299,11 +319,11 @@ dc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 dd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 de0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 df0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-e00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-e10: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e00: 23 00 81 e3 98 1e 80 03 00 00 1e 00 02 00 00 00
+e10: 00 00 00 00 00 00 00 00 00 00 00 00 03 01 00 10
 e20: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-e30: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-e40: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+e30: 00 00 00 00 00 00 00 00 03 00 01 00 00 00 00 10
+e40: 78 11 91 30 00 00 00 00 00 00 00 00 00 00 00 00
 e50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 e60: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 e70: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00

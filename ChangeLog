@@ -1,3 +1,74 @@
+2020-05-31  Martin Mares <mj@ucw.cz>
+
+	* Released as 3.7.0.
+
+	* Added or improved the following capabilities: Designated Vendor-Specific,
+	  Compute eXpress Link, Resizable BARs, VF Resizable BARs, Link
+	  Capabilities 2, Link Status 2.
+
+	* On Linux, lspci can show IOMMU groups.
+
+	* setpci can be asked to skip bus scan and operate on a device
+	  completely specified by its domain/bus/dev/func address. This
+	  involved major internal cleanup.
+
+	* The above feature of setpci uses the pci_get_dev() function,
+	  which obtains a struct pci_dev without doing a bus scan. This was
+	  always possible, but apparently little used, because back-ends
+	  frequently choked when operating on such devices. Fixed a lot
+	  of minor bugs related to this.
+
+	* Also, back-ends which do not support domains now correctly fail when
+	  trying to access devices outside domain 0.
+
+	* Semantics of pci_fill_info() and pci_dev->known_fields was underspecified,
+	  which lead to inconsistencies between back-ends. Improved documentation
+	  to give a more precise definition and updated all back-ends to conform
+	  to it. Most importantly, pci_dev->known_fields shows all fields requested
+	  over the lifetime of the pci_dev, but never those which are not supported
+	  by the back-end.
+
+	* As usually, updated pci.ids to the current snapshot of the database.
+
+2020-01-25  Martin Mares <mj@ucw.cz>
+
+	* Released as 3.6.4.
+
+	* A new back-end for the GNU Hurd was contributed by Joan Lledó.
+
+	* When printing VPD item identifiers, non-ASCII characters are escaped.
+
+2020-01-22  Martin Mares <mj@ucw.cz>
+
+	* Released as 3.6.3.
+
+	* `lspci -t' (tree mode) can be combined with `-s' to show a sub-tree.
+	  We also fixed potential buffer overflows in the tree dumper.
+
+	* Cleaned messy code for dumping of I/O, memory, and ROM regions.
+	  This helped fixing a bug, which caused some 64-bit regions to be
+	  reported as virtual. All flags are now printed after the address
+	  (previously, "[virtual]" and "[enhanced]" were before it for no good
+	  reason).
+
+	* Added pci_find_cap_nr() to the library, which handles capabilities
+	  which occur multiple times in a single device.
+
+	* Minor improvements in printing of PCIe capabilities.
+
+	* We now decode the Multicast and Secondary PCI Express extended
+	  capabilities.
+
+	* The list of capability names available to setpci was updated.
+
+	* Minor bugs were fixed in FreeBSD and Solaris ports.
+
+	* We now prefer HTTPS URLs in all documentation
+
+	* The pci.ids file has a man page.
+
+	* As usually, updated pci.ids to the current snapshot of the database.
+
 2018-08-12  Martin Mares <mj@ucw.cz>
 
 	* Released as 3.6.2.
@@ -51,7 +122,7 @@
 	* The order in which back-ends are probed was decoupled from the
 	  internal back-end IDs. This helps, because new back-ends must have
 	  their ID allocated at the end to keep the ABI, but they might need
-	  to be proved earlier.
+	  to be probed earlier.
 
 	* The fbsd-device back-end should work again.
 
